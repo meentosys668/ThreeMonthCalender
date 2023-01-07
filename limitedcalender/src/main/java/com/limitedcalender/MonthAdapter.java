@@ -1,4 +1,4 @@
-package com.threemonthcalender.limitedCalender;
+package com.limitedcalender;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.threemonthcalender.R;
 
 import java.util.Calendar;
 import java.util.Date;

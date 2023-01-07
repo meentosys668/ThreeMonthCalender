@@ -1,4 +1,4 @@
-package com.threemonthcalender.limitedCalender;
+package com.limitedcalender;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.threemonthcalender.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

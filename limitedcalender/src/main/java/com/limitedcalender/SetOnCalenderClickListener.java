@@ -1,4 +1,4 @@
-package com.threemonthcalender.limitedCalender;
+package com.limitedcalender;
 
 import java.util.Calendar;
 

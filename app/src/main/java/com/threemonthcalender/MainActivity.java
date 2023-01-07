@@ -5,9 +5,9 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.limitedcalender.LimitedCalenderHandler;
+import com.limitedcalender.SetOnCalenderClickListener;
 import com.threemonthcalender.databinding.ActivityMainBinding;
-import com.threemonthcalender.limitedCalender.LimitedCalenderHandler;
-import com.threemonthcalender.limitedCalender.SetOnCalenderClickListener;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

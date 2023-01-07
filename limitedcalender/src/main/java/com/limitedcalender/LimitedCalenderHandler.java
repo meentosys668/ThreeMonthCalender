@@ -1,4 +1,4 @@
-package com.threemonthcalender.limitedCalender;
+package com.limitedcalender;
 
 import android.content.Context;
 import android.view.View;

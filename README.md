@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/meentosys668/ThreeMonthCalender.svg)](https://jitpack.io/#meentosys668/ThreeMonthCalender)
+
 To get a Git project into your build:
 
 Step 1. Add the JitPack repository to your build file

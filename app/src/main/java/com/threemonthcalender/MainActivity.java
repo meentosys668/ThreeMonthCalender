@@ -44,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
                         SimpleDateFormat sdf = new SimpleDateFormat("EEEE dd-MMM-yyyy HH:mm a", Locale.getDefault());
                         Log.e(TAG, "onDateClick: " + sdf.format(date.getTime()));
                     }
+
+                    @Override
+                    public void onDisabledDateClick(Calendar disabledDate) {
+
+                    }
                 });
         limitedCalenderHandler.build();
 

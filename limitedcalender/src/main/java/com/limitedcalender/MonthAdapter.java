@@ -59,12 +59,7 @@ public class MonthAdapter extends RecyclerView.Adapter<MonthViewHolder> {
         }
         holder.textView.setText(String.valueOf(calendar.get(Calendar.DAY_OF_MONTH)));
         holder.textView.setOnClickListener(v -> {
-            ColorDrawable colorDrawable = (ColorDrawable) holder.linearLayout.getBackground();
-            if (colorDrawable.getColor() == context.getResources().getColor(R.color.teal_200)) {
-                holder.linearLayout.setBackgroundColor(Color.parseColor("#F3F1F1"));
-            } else {
-                holder.linearLayout.setBackgroundColor(context.getResources().getColor(R.color.teal_200));
-            }
+
             if (setOnCalenderClickListener != null) {
                 if (disabledDateList != null) {
                     if (disabledDateList.contains(date)) {
@@ -73,6 +68,13 @@ public class MonthAdapter extends RecyclerView.Adapter<MonthViewHolder> {
                     }
                 }
                 setOnCalenderClickListener.onDateClick(calendar);
+            }
+
+            ColorDrawable colorDrawable = (ColorDrawable) holder.linearLayout.getBackground();
+            if (colorDrawable.getColor() == context.getResources().getColor(R.color.teal_200)) {
+                holder.linearLayout.setBackgroundColor(Color.parseColor("#F3F1F1"));
+            } else {
+                holder.linearLayout.setBackgroundColor(context.getResources().getColor(R.color.teal_200));
             }
 
         });

@@ -47,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onDisabledDateClick(Calendar disabledDate) {
-
+                        SimpleDateFormat sdf = new SimpleDateFormat("EEEE dd-MMM-yyyy HH:mm a", Locale.getDefault());
+                        Log.e(TAG, "onDateClick: " + sdf.format(disabledDate.getTime()));
                     }
                 });
         limitedCalenderHandler.build();

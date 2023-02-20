@@ -20,6 +20,7 @@ public class CalenderAdapter extends RecyclerView.Adapter<CalenderViewHolder> {
     List<List<Date>> dateList;
     SetOnCalenderClickListener setOnCalenderClickListener;
     List<Date> disabledDateList;
+    Date preSelectedDate;
 
     public CalenderAdapter(Context context, List<List<Date>> dateList, SetOnCalenderClickListener setOnCalenderClickListener) {
         this.context = context;
@@ -29,6 +30,11 @@ public class CalenderAdapter extends RecyclerView.Adapter<CalenderViewHolder> {
 
     public void setDisabledDateList(List<Date> disabledDateList){
         this.disabledDateList = disabledDateList;
+        notifyDataSetChanged();
+    }
+
+    public void setPreSelectedDate(Date preSelectedDate) {
+        this.preSelectedDate = preSelectedDate;
         notifyDataSetChanged();
     }
 
@@ -44,6 +50,7 @@ public class CalenderAdapter extends RecyclerView.Adapter<CalenderViewHolder> {
         holder.recyclerView.setLayoutManager(new GridLayoutManager(context,7));
         MonthAdapter monthAdapter = new MonthAdapter(context,date,holder.setOnCalenderClickListener,(dateList.size()-1)==position);
         monthAdapter.setDisabledDateList(disabledDateList);
+        monthAdapter.setPreSelectedDate(preSelectedDate);
         SimpleDateFormat sdf = new SimpleDateFormat("MMMM", Locale.getDefault());
         holder.textView.setText(sdf.format(date.get(0)));
         holder.recyclerView.setAdapter(monthAdapter);

@@ -22,6 +22,7 @@ public class LimitedCalenderHandler {
     private List<Date> disabledDateList;
     private CalenderAdapter calenderAdapter;
     private String dateFormat;
+    private Date preSelectedDate;
 
     public static LimitedCalenderHandler getInstance(Context context, View recyclerViewId) {
         return new LimitedCalenderHandler(context, recyclerViewId);
@@ -34,6 +35,23 @@ public class LimitedCalenderHandler {
 
     public LimitedCalenderHandler setNumberMonth(int count) {
         this.count = count;
+        return this;
+    }
+
+    public LimitedCalenderHandler setPreSelectedDate(String preSelectedDate) {
+        this.preSelectedDate = getDateFromText(preSelectedDate);
+        if (calenderAdapter!=null) {
+            calenderAdapter.setPreSelectedDate(this.preSelectedDate);
+        }
+        return this;
+    }
+
+    public LimitedCalenderHandler setPreSelectedDate(String preSelectedDate,String dateFormat) {
+        this.dateFormat = dateFormat;
+        this.preSelectedDate = getDateFromText(preSelectedDate);
+        if (calenderAdapter!=null) {
+            calenderAdapter.setPreSelectedDate(this.preSelectedDate);
+        }
         return this;
     }
 

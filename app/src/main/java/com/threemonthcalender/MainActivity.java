@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         limitedCalenderHandler.build();
 
         limitedCalenderHandler.setDisabledDateList(list);
+        limitedCalenderHandler.setPreSelectedDate("2023-02-21");
 
     }
 

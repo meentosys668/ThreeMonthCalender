@@ -20,12 +20,18 @@ public class MonthAdapter extends RecyclerView.Adapter<MonthViewHolder> {
     SetOnCalenderClickListener setOnCalenderClickListener;
     boolean isLast;
     List<Date> disabledDateList;
+    Date preSelectedDate;
 
     public MonthAdapter(Context context, List<Date> dateList, SetOnCalenderClickListener setOnCalenderClickListener, boolean isLast) {
         this.context = context;
         this.dateList = dateList;
         this.setOnCalenderClickListener = setOnCalenderClickListener;
         this.isLast = isLast;
+    }
+
+    public void setPreSelectedDate(Date preSelectedDate){
+        this.preSelectedDate = preSelectedDate;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -73,6 +79,9 @@ public class MonthAdapter extends RecyclerView.Adapter<MonthViewHolder> {
             ColorDrawable colorDrawable = (ColorDrawable) holder.linearLayout.getBackground();
             if (colorDrawable.getColor() == context.getResources().getColor(R.color.teal_200)) {
                 holder.linearLayout.setBackgroundColor(Color.parseColor("#F3F1F1"));
+                if (date.equals(preSelectedDate)){
+                    preSelectedDate = null;
+                }
             } else {
                 holder.linearLayout.setBackgroundColor(context.getResources().getColor(R.color.teal_200));
             }
@@ -85,6 +94,12 @@ public class MonthAdapter extends RecyclerView.Adapter<MonthViewHolder> {
                 holder.textView.setTextColor(context.getResources().getColor(R.color.white));
             }
         }
+
+        if (date.equals(preSelectedDate)){
+            holder.linearLayout.setBackgroundColor(context.getResources().getColor(R.color.teal_200));
+            setOnCalenderClickListener.onDateClick(calendar);
+        }
+
     }
 
     public void setDisabledDateList(List<Date> disabledDateList) {
